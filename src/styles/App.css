@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    height: 100vh;
+    min-width: 375px;
+    padding: 38px 28px;
+}
+
+header {
+    padding: 38px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid chartreuse;
+
+}
