@@ -20,3 +20,27 @@ header {
     border: 1px solid chartreuse;
 
 }
+
+main {
+    padding: 38px 28px;
+    border-radius: 15px;
+    border: 1px solid chartreuse;
+    margin: 28px 0px;
+
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+
+}
+
+.personalInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-right: auto;
+}
