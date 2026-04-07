@@ -33,10 +33,11 @@ export default function CVPreview({ cvData, onEdit }) {
         <div id="cv-preview" className="cv-preview">
           <header className="cv-header">
             <h1>{cvData.name}</h1>
-            <p>
-              {cvData.email} | {cvData.phone}
-            </p>
           </header>
+          <p>
+            {cvData.email} | {cvData.phone}
+          </p>
+
           {cvData.education.length > 0 && (
             <section className="cv-section">
               <h2>Education</h2>
@@ -64,16 +65,16 @@ export default function CVPreview({ cvData, onEdit }) {
               ))}
             </section>
           )}
-        </div>
-      )}
-      {hasData && (
-        <div className="cv-buttons">
-          <button className="edit-button" onClick={onEdit}>
-            Edit
-          </button>
-          <button className="pdf-button" onClick={handleSaveAsPdf}>
-            Save as PDF
-          </button>
+          {hasData && (
+            <div className="cv-buttons">
+              <button className="pdf-button" onClick={handleSaveAsPdf}>
+                Save as PDF
+              </button>
+              <button className="edit-button" onClick={onEdit}>
+                Edit
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>
