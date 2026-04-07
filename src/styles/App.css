@@ -1,92 +1,188 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0 auto;
-    height: 100vh;
-    min-width: 375px;
-    padding: 38px 28px;
+  margin: 0 auto;
+  height: 100vh;
+  min-width: 375px;
+  padding: 38px 28px;
+  background-color: #212121;
+    color: #999;
 }
 
 header {
-    padding: 38px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 15px;
-    border: 1px solid chartreuse;
+  padding: 38px 28px;
+  display: flex;
+  color: chartreuse;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow:
+    15px 15px 30px rgb(25, 25, 25),
+    -15px -15px 30px rgb(60, 60, 60);
 
 }
 
 main {
-    display: block;
-    padding: 38px 28px;
-    border-radius: 15px;
-    border: 1px solid chartreuse;
-    margin: 28px 0px;
-
-
+  display: block;
+  border-radius: 15px;
+  margin: 28px 0px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    align-items: flex-start;
-    max-width: 262px;
-
+  padding: 38px 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  max-width: 262px;
+    border-radius: 30px;
+  box-shadow:
+    15px 15px 30px rgb(25, 25, 25),
+    -15px -15px 30px rgb(60, 60, 60);
 }
+.inputGroup {
+  position: relative;
+}
+.input {
+  font-size: 16px;
+  padding: 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+  margin-top: 20px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.input:focus ~ label,
+.input:valid ~ label {
+  top: -11px;
+  font-size: 14px;
+  color: chartreuse;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.bar::before,
+.bar::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: chartreuse;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar::before {
+  left: 50%;
+}
+
+.bar::after {
+  right: 50%;
+}
+
+.input:focus ~ .bar:before,
+.input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+@keyframes inputHighlighter {
+  from {
+    background: chartreuse;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
 fieldset {
-    padding: 15px 5px;
+  padding: 15px 5px;
 }
 
 .addInput {
-    display: flex;
-    gap: 1px;
-    align-items: center;
-
+  display: flex;
+  gap: 1px;
+  align-items: center;
 }
 
-.addSchool, .addJob {
-    width: 100px;
+.addSchool,
+.addJob {
+  width: 100px;
 }
 
 .addYear {
-    width: 45px;
+  width: 45px;
 }
 
 .addBtn {
-    border-radius: 50px;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    text-align: center;
-    margin-left: 10px;
-
+  border-radius: 50px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  margin-left: 10px;
 }
 
 .addBtn:hover {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
+.cv-preview-container {
+    border-radius: 30px;
+    border: 1px solid chartreuse;
+    padding: 38px 7px;
 
-.personalInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
 }
 
 @media (min-width: 801px) {
-    main {
-        display: flex;
-        gap: 28px;
-    }
+  main {
+    display: flex;
+    gap: 28px;
+  }
 
-
-    .cv-preview-container {
-        flex: auto;
-    }
+  .cv-preview-container {
+    flex: auto;
+  }
 }
