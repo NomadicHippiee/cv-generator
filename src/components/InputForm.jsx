@@ -100,7 +100,8 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             type="text"
             id="fullName"
             name="name"
-            autoComplete="name"
+            autoComplete="off"
+            placeholder=""
             value={personalInfo.name}
             onChange={handlePersonalChange}
             className="input"
@@ -116,7 +117,8 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             type="tel"
             id="mobileNum"
             name="phone"
-            autoComplete="tel"
+            autoComplete="off"
+            placeholder=""
             value={personalInfo.phone}
             onChange={handlePersonalChange}
             className="input"
@@ -132,7 +134,8 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             type="email"
             id="email"
             name="email"
-            autoComplete="email"
+            autoComplete="off"
+            placeholder=""
             value={personalInfo.email}
             onChange={handlePersonalChange}
             className="input"

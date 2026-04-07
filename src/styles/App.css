@@ -20,7 +20,7 @@ body {
   color: #999;
 }
 
-header {
+.header {
   padding: 38px 28px;
   display: flex;
   color: var(--green);
@@ -57,6 +57,7 @@ form {
   border-bottom: 1px solid #515151;
   background: transparent;
   margin-top: 20px;
+  color: var(--main-text);
 }
 
 .input:focus {
@@ -85,7 +86,7 @@ label {
 .bar {
   position: relative;
   display: block;
-  width: 200px;
+  min-width: 200px;
 }
 
 .bar::before,
@@ -113,6 +114,13 @@ label {
 .input:focus ~ .bar:after {
   width: 50%;
 }
+.input:not(:placeholder-shown) ~ label {
+  top: -11px;
+  font-size: 14px;
+  color: var(--green);
+}
+
+
 
 .highlight {
   position: absolute;
@@ -192,8 +200,10 @@ li {
   outline: none;
 }
 
-.addSchool:focus, .addJob:focus, .addYear:focus {
-    border: 1px solid var(--green);
+.addSchool:focus,
+.addJob:focus,
+.addYear:focus {
+  border: 1px solid var(--green);
 }
 
 .addBtn {
@@ -216,10 +226,10 @@ li {
 }
 
 .generate {
-    border-radius: 20px;
-    padding: 10px;
-    background-color: var(--green);
-    box-shadow: var(--box-shadow);
+  border-radius: 20px;
+  padding: 10px;
+  background-color: var(--green);
+  box-shadow: var(--box-shadow);
 }
 
 .xBtn:hover {
@@ -234,8 +244,63 @@ li {
   border-radius: 30px;
   border: 1px solid var(--green);
   padding: 38px 7px;
+
 }
 
+.cv-buttons {
+    position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 15px;
+
+}
+
+.cv-buttons button {
+  border-radius: 20px;
+  padding: 10px;
+  background-color: var(--main-text);
+  border-color: var(--background);
+    
+}
+
+.edit-button:hover {
+    background-color: var(--green);
+}
+
+.pdf-button:hover {
+    background-color: var(--green);
+}
+.cv-preview {
+  width: 100%;
+  max-width: 600px;
+  min-width: 280px;
+  aspect-ratio: 210 / 297;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: black;
+  position: relative;
+}
+
+.cv-entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+section.cv-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
 @media (min-width: 801px) {
   main {
     display: flex;
@@ -246,3 +311,5 @@ li {
     flex: auto;
   }
 }
+
+

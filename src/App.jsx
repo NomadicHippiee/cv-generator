@@ -35,7 +35,7 @@ function App() {
 
   return (
     <>
-      <header>
+      <header className="header">
         <Header />
       </header>
       <main>
