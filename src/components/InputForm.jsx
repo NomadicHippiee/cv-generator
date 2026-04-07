@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function InputForm({ setCVData, onSubmit, initialData }) {
   const [personalInfo, setPersonalInfo] = useState({
     name: initialData.name || "",
-    phone: initialData.phone ||  "",
+    phone: initialData.phone || "",
     email: initialData.email || "",
   });
 
@@ -93,7 +93,6 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
 
   return (
     <form>
-      <h2>Update CV</h2>
       <div className="personalInfo">
         <h3>Personal Information</h3>
         <label htmlFor="fullName">Full name:</label>
@@ -136,8 +135,9 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             </li>
           ))}
         </ul>
-        <div>
+        <div className="addInput">
           <input
+            className="addSchool"
             type="text"
             name="school"
             placeholder="School name"
@@ -147,9 +147,10 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             }
           />
           <input
+            className="addYear"
             type="number"
             name="startYear"
-            placeholder="Start year"
+            placeholder="Start"
             value={educationInput.startYear}
             onChange={(e) =>
               setEducationInput({
@@ -159,16 +160,17 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             }
           />
           <input
+            className="addYear"
             type="number"
             name="endYear"
-            placeholder="End year"
+            placeholder="End"
             value={educationInput.endYear}
             onChange={(e) =>
               setEducationInput({ ...educationInput, endYear: e.target.value })
             }
           />
-          <button type="button" onClick={addEducation}>
-            Add
+          <button className="addBtn" type="button" onClick={addEducation}>
+            +
           </button>
         </div>
       </fieldset>
@@ -186,8 +188,9 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
           ))}
         </ul>
 
-        <div>
+        <div className="addInput">
           <input
+          className="addJob"
             type="text"
             name="job"
             placeholder="Job name"
@@ -197,9 +200,10 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             }
           />
           <input
+          className="addYear"
             type="number"
             name="startYear"
-            placeholder="Start year"
+            placeholder="Start"
             value={experienceInput.startYear}
             onChange={(e) =>
               setExperienceInput({
@@ -209,9 +213,10 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             }
           />
           <input
+          className="addYear"
             type="number"
             name="endYear"
-            placeholder="End year"
+            placeholder="End"
             value={experienceInput.endYear}
             onChange={(e) =>
               setExperienceInput({
@@ -220,8 +225,8 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
               })
             }
           />
-          <button type="button" onClick={addExperience}>
-            Add
+          <button className="addBtn" type="button" onClick={addExperience}>
+            +
           </button>
         </div>
       </fieldset>

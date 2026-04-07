@@ -35,15 +35,48 @@ form {
     display: flex;
     flex-direction: column;
     gap: 28px;
+    align-items: flex-start;
+    max-width: 262px;
+
+}
+fieldset {
+    padding: 15px 5px;
+}
+
+.addInput {
+    display: flex;
+    gap: 1px;
     align-items: center;
 
 }
+
+.addSchool, .addJob {
+    width: 100px;
+}
+
+.addYear {
+    width: 45px;
+}
+
+.addBtn {
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-left: 10px;
+
+}
+
+.addBtn:hover {
+    font-size: 1.5rem;
+}
+
 
 .personalInfo {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    margin-right: auto;
 }
 
 @media (min-width: 801px) {
@@ -52,11 +85,8 @@ form {
         gap: 28px;
     }
 
-    form {
-        flex: 2;
-    }
 
     .cv-preview-container {
-        flex: 3;
+        flex: auto;
     }
 }
