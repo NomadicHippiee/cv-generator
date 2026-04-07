@@ -95,33 +95,53 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
     <form>
       <div className="personalInfo">
         <h3>Personal Information</h3>
-        <label htmlFor="fullName">Full name:</label>
-        <input
-          type="text"
-          id="fullName"
-          name="name"
-          autoComplete="name"
-          value={personalInfo.name}
-          onChange={handlePersonalChange}
-        />
-        <label htmlFor="mobileNum">Mobile number:</label>
-        <input
-          type="tel"
-          id="mobileNum"
-          name="phone"
-          autoComplete="tel"
-          value={personalInfo.phone}
-          onChange={handlePersonalChange}
-        />
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          autoComplete="email"
-          value={personalInfo.email}
-          onChange={handlePersonalChange}
-        />
+        <div className="inputGroup">
+          <input
+            type="text"
+            id="fullName"
+            name="name"
+            autoComplete="name"
+            value={personalInfo.name}
+            onChange={handlePersonalChange}
+            className="input"
+            required
+          />
+          <span className="highlight" />
+          <span className="bar" />
+          <label htmlFor="fullName">Name</label>
+        </div>
+
+        <div className="inputGroup">
+          <input
+            type="tel"
+            id="mobileNum"
+            name="phone"
+            autoComplete="tel"
+            value={personalInfo.phone}
+            onChange={handlePersonalChange}
+            className="input"
+            required
+          />
+          <span className="highlight" />
+          <span className="bar" />
+          <label htmlFor="mobileNum">Mobile</label>
+        </div>
+
+        <div className="inputGroup">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autoComplete="email"
+            value={personalInfo.email}
+            onChange={handlePersonalChange}
+            className="input"
+            required
+          />
+          <span className="highlight" />
+          <span className="bar" />
+          <label htmlFor="email">Email</label>
+        </div>
       </div>
       <fieldset>
         <legend>Education</legend>
@@ -190,7 +210,7 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
 
         <div className="addInput">
           <input
-          className="addJob"
+            className="addJob"
             type="text"
             name="job"
             placeholder="Job name"
@@ -200,7 +220,7 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             }
           />
           <input
-          className="addYear"
+            className="addYear"
             type="number"
             name="startYear"
             placeholder="Start"
@@ -213,7 +233,7 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
             }
           />
           <input
-          className="addYear"
+            className="addYear"
             type="number"
             name="endYear"
             placeholder="End"
