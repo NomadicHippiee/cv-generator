@@ -22,6 +22,7 @@ header {
 }
 
 main {
+    display: block;
     padding: 38px 28px;
     border-radius: 15px;
     border: 1px solid chartreuse;
@@ -43,4 +44,19 @@ form {
     flex-direction: column;
     gap: 4px;
     margin-right: auto;
+}
+
+@media (min-width: 801px) {
+    main {
+        display: flex;
+        gap: 28px;
+    }
+
+    form {
+        flex: 2;
+    }
+
+    .cv-preview-container {
+        flex: 3;
+    }
 }

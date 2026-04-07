@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function InputForm({ setCVData }) {
+export default function InputForm({ setCVData, onSubmit, initialData }) {
   const [personalInfo, setPersonalInfo] = useState({
-    name: "",
-    phone: "",
-    email: "",
+    name: initialData.name || "",
+    phone: initialData.phone ||  "",
+    email: initialData.email || "",
   });
 
-  const [education, setEducation] = useState([]);
+  const [education, setEducation] = useState(initialData.education || []);
 
   const [educationInput, setEducationInput] = useState({
     school: "",
@@ -15,7 +15,7 @@ export default function InputForm({ setCVData }) {
     endYear: "",
   });
 
-  const [experience, setExperience] = useState([]);
+  const [experience, setExperience] = useState(initialData.experience || []);
 
   const [experienceInput, setExperienceInput] = useState({
     job: "",
@@ -88,6 +88,7 @@ export default function InputForm({ setCVData }) {
       education: education,
       experience: experience,
     });
+    onSubmit();
   };
 
   return (
@@ -100,6 +101,7 @@ export default function InputForm({ setCVData }) {
           type="text"
           id="fullName"
           name="name"
+          autoComplete="name"
           value={personalInfo.name}
           onChange={handlePersonalChange}
         />
@@ -108,6 +110,7 @@ export default function InputForm({ setCVData }) {
           type="tel"
           id="mobileNum"
           name="phone"
+          autoComplete="tel"
           value={personalInfo.phone}
           onChange={handlePersonalChange}
         />
@@ -116,6 +119,7 @@ export default function InputForm({ setCVData }) {
           type="email"
           id="email"
           name="email"
+          autoComplete="email"
           value={personalInfo.email}
           onChange={handlePersonalChange}
         />
