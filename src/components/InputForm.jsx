@@ -148,10 +148,10 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
         <ul>
           {education.map((edu) => (
             <li key={edu.id}>
-              {edu.school} ({edu.startYear} - {edu.endYear})
-              <button type="button" onClick={() => removeEducation(edu.id)}>
+              <button className="xBtn" type="button" onClick={() => removeEducation(edu.id)}>
                 X
               </button>
+              {edu.school} ({edu.startYear} - {edu.endYear})
             </li>
           ))}
         </ul>
@@ -200,10 +200,10 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
         <ul>
           {experience.map((exp) => (
             <li key={exp.id}>
-              {exp.job} ({exp.startYear} - {exp.endYear})
-              <button type="button" onClick={() => removeExperience(exp.id)}>
+              <button className="xBtn" type="button" onClick={() => removeExperience(exp.id)}>
                 X
               </button>
+              {exp.job} ({exp.startYear} - {exp.endYear})
             </li>
           ))}
         </ul>
@@ -251,7 +251,7 @@ export default function InputForm({ setCVData, onSubmit, initialData }) {
         </div>
       </fieldset>
 
-      <button type="button" onClick={handleSubmit}>
+      <button className="generate" type="button" onClick={handleSubmit}>
         Generate CV
       </button>
     </form>

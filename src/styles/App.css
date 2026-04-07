@@ -4,26 +4,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background: #212121;
+  --main-text: #999;
+  --green: chartreuse;
+  --box-shadow: 15px 15px 30px rgb(25, 25, 25), -0px -0px 25px rgb(60, 60, 60);
+}
+
 body {
   margin: 0 auto;
   height: 100vh;
   min-width: 375px;
   padding: 38px 28px;
-  background-color: #212121;
-    color: #999;
+  background-color: var(--background);
+  color: #999;
 }
 
 header {
   padding: 38px 28px;
   display: flex;
-  color: chartreuse;
+  color: var(--green);
   justify-content: space-between;
   align-items: center;
   border-radius: 30px;
-  box-shadow:
-    15px 15px 30px rgb(25, 25, 25),
-    -15px -15px 30px rgb(60, 60, 60);
-
+  box-shadow: var(--box-shadow);
 }
 
 main {
@@ -37,12 +41,9 @@ form {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  align-items: flex-start;
-  max-width: 262px;
-    border-radius: 30px;
-  box-shadow:
-    15px 15px 30px rgb(25, 25, 25),
-    -15px -15px 30px rgb(60, 60, 60);
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: var(--box-shadow);
 }
 .inputGroup {
   position: relative;
@@ -51,7 +52,7 @@ form {
   font-size: 16px;
   padding: 5px;
   display: block;
-  width: 200px;
+  min-width: 250px;
   border: none;
   border-bottom: 1px solid #515151;
   background: transparent;
@@ -63,7 +64,6 @@ form {
 }
 
 label {
-  color: #999;
   font-size: 18px;
   font-weight: normal;
   position: absolute;
@@ -79,7 +79,7 @@ label {
 .input:valid ~ label {
   top: -11px;
   font-size: 14px;
-  color: chartreuse;
+  color: var(--green);
 }
 
 .bar {
@@ -95,7 +95,7 @@ label {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: chartreuse;
+  background: var(--green);
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -129,7 +129,7 @@ label {
 }
 @keyframes inputHighlighter {
   from {
-    background: chartreuse;
+    background: var(--green);
   }
   to {
     width: 0;
@@ -139,30 +139,91 @@ label {
 
 fieldset {
   padding: 15px 5px;
+  min-width: 300px;
+  border-radius: 10px;
+  border: 1px solid var(--main-text);
+}
+
+legend {
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+ul {
+  list-style: none;
+  padding: 10px 0px;
+}
+
+li {
+  padding: 5px 0px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .addInput {
   display: flex;
-  gap: 1px;
+  gap: 5px;
   align-items: center;
 }
 
 .addSchool,
 .addJob {
-  width: 100px;
+  max-width: 130px;
+  padding: 10px 5px;
+  border-radius: 10px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .addYear {
-  width: 45px;
+  max-width: 55px;
+  padding: 10px 5px;
+  border-radius: 10px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.addSchool:focus, .addJob:focus, .addYear:focus {
+    border: 1px solid var(--green);
 }
 
 .addBtn {
   border-radius: 50px;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   line-height: 25px;
   text-align: center;
-  margin-left: 10px;
+  margin-left: auto;
+  background-color: var(--green);
+}
+
+.xBtn {
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  font-size: 10px;
+  padding: 3px;
+}
+
+.generate {
+    border-radius: 20px;
+    padding: 10px;
+    background-color: var(--green);
+    box-shadow: var(--box-shadow);
+}
+
+.xBtn:hover {
+  font-size: 0.5rem;
 }
 
 .addBtn:hover {
@@ -170,10 +231,9 @@ fieldset {
 }
 
 .cv-preview-container {
-    border-radius: 30px;
-    border: 1px solid chartreuse;
-    padding: 38px 7px;
-
+  border-radius: 30px;
+  border: 1px solid var(--green);
+  padding: 38px 7px;
 }
 
 @media (min-width: 801px) {
