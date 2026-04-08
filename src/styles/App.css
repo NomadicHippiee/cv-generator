@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 * {
   margin: 0;
@@ -33,7 +33,10 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-h1, h2, h3, legend {
+h1,
+h2,
+h3,
+legend {
   font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -80,7 +83,7 @@ label {
   position: absolute;
   pointer-events: none;
   left: 5px;
-  top: 10px;
+  top: 5px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -129,8 +132,6 @@ label {
   font-size: 14px;
   color: var(--green);
 }
-
-
 
 .highlight {
   position: absolute;
@@ -210,6 +211,16 @@ li {
   outline: none;
 }
 
+.addYear[type="number"]::-webkit-outer-spin-button,
+.addYear[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.addYear[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .addSchool:focus,
 .addJob:focus,
 .addYear:focus {
@@ -254,16 +265,14 @@ li {
   border-radius: 30px;
   border: 1px solid var(--green);
   padding: 38px 7px;
-
 }
 
 .cv-buttons {
-    position: absolute;
+  position: absolute;
   bottom: 10px;
   right: 10px;
   display: flex;
   gap: 15px;
-
 }
 
 .cv-buttons button {
@@ -271,15 +280,14 @@ li {
   padding: 10px;
   background-color: var(--main-text);
   border-color: var(--background);
-    
 }
 
 .edit-button:hover {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 
 .pdf-button:hover {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 .cv-preview {
   font-family: "Open Sans", sans-serif !important;
@@ -295,20 +303,36 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 15px;
   color: black;
   position: relative;
 }
 
-.cv-preview h1, .cv-preview h2, .cv-preview h3 {
-    font-family: "Open Sans", sans-serif;
+.cv-preview h1,
+.cv-preview h2,
+.cv-preview h3 {
+  font-family: "Open Sans", sans-serif;
+}
+.cv-preview h1 {
+  font-size: 24px;
+}
+
+.cv-preview h2 {
+  font-size: 20px;
+}
+
+.cv-preview h3 {
+  font-size: 16px;
+}
+
+.cv-preview p {
+  font-size: 14px;
 }
 
 .cv-entry {
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  min-width: 260px;
 }
 section.cv-section {
   display: flex;
@@ -332,5 +356,3 @@ section.cv-section {
     display: none !important;
   }
 }
-
-
